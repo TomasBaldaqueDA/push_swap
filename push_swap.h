@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:47:01 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/20 16:50:50 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:46:18 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ typedef struct s_ps
 	int		bench;
 	double	disorder;
 }	t_ps;
+
+void	free_all(t_ps *ps);
+void	error_exit(t_ps *ps);
 
 #endif
