@@ -7,7 +7,8 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS =  main.c \
-	error.c
+	error.c \
+	atoi_safe.c
 
 OBJS = $(SRCS:.c=.o)
 

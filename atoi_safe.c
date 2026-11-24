@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_safe.c                                         :+:      :+:    :+:   */
+/*   atoi_safe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose-fgu <jose-fgu@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 17:54:00 by jose-fgu          #+#    #+#             */
-/*   Updated: 2026/11/20 17:55:59 by jose-fgu         ###   ########.fr       */
+/*   Updated: 2026/11/24 14:11:57 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	atoi_safe(const char *str, int *out)
 	r = 0;
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
-		sig = -sig;
+			sig = -sig;
 	if (!ft_isdigit(str[i]))
 		return (0);
-	while (!ft_isdigit(str[i]))
+	while (ft_isdigit(str[i]))
 	{
 		r = (r * 10) + str[i] - '0';
 		if ((r * sig) > INT_MAX || (r * sig) < INT_MIN)
