@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:47:01 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/24 16:28:00 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/24 17:41:00 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,9 @@ void	error_exit(t_ps *ps);
 int		atoi_safe(const char *str, int *out);
 int		read_flags(t_ps *ps, int argc, char **argv);
 int		is_flag(char *argv);
+int		dupe_check(t_stack *s);
+void	stack_filler(t_ps *ps, int argc, char **argv, int start);
+void	ab_stack(t_ps *ps, int cap);
+int		parse(t_ps *ps, int argc, char **argv);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose-fgu <jose-fgu@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 16:44:21 by jose-fgu          #+#    #+#             */
-/*   Updated: 2026/11/24 17:29:53 by jose-fgu         ###   ########.fr       */
+/*   Updated: 2026/11/24 17:39:31 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	ab_stack(t_ps *ps, int cap)
 {
 	ps->a.arr = malloc(cap * sizeof(int));
-	if (ps->a.arr = NULL)
+	if (ps->a.arr == NULL)
 		error_exit(ps);
 	ps->b.arr = malloc(cap * sizeof(int));
-	if (ps->b.arr = NULL)
+	if (ps->b.arr == NULL)
 		error_exit(ps);
 	ps->a.cap = cap;
 	ps->b.cap = cap;
@@ -26,15 +26,15 @@ void	ab_stack(t_ps *ps, int cap)
 	ps->b.len = 0;
 }
 
-void	stack_filler(t_ps *ps, int argc, char **agrv, int start)
+void	stack_filler(t_ps *ps, int argc, char **argv, int start)
 {
 	int	i;
-	int	*n;
+	int	n;
 
 	i = start;
 	while (i < argc)
 	{
-		if (atoi_safe(agrv[i], &n) == 0)
+		if (atoi_safe(argv[i], &n) == 0)
 			error_exit(ps);
 		ps->a.arr[i - start] = n;
 		i++;

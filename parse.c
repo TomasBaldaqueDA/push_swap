@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 15:09:13 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/24 16:27:08 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/24 17:40:32 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,18 @@ int	read_flags(t_ps *ps, int argc, char **argv)
 		i++;
 	}
 	return (i);
+}
+
+int	parse(t_ps *ps, int argc, char **argv)
+{
+	int	start;
+
+	start = read_flags(ps, argc, argv);
+	if (start == argc)
+		return (0);
+	ab_stack(ps, argc - start);
+	stack_filler(ps, argc, argv, start);
+	if (dupe_check(&ps->a))
+		error_exit(ps);
+	return (1);
 }

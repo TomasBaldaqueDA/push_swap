@@ -8,7 +8,9 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS =  main.c \
 	error.c \
-	atoi_safe.c
+	atoi_safe.c \
+	parse.c \
+	init.c
 
 OBJS = $(SRCS:.c=.o)
 
