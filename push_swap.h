@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:47:01 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/24 14:48:40 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/24 16:28:00 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ typedef struct s_ps
 void	free_all(t_ps *ps);
 void	error_exit(t_ps *ps);
 int		atoi_safe(const char *str, int *out);
+int		read_flags(t_ps *ps, int argc, char **argv);
+int		is_flag(char *argv);
 
 #endif
