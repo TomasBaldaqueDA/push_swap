@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 15:39:09 by jose-fgu          #+#    #+#             */
-/*   Updated: 2026/11/25 17:10:15 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:33:57 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,22 @@ static void	rot_op(t_ps *ps, t_op_type op)
 		revrot(&ps->a);
 		revrot(&ps->b);
 	}
+}
+
+static void	add_op(t_ps *ps, t_op_type op)
+{
+	t_op	*new;
+
+	new = malloc(sizeof(t_op));
+	if (new == NULL)
+		error_exit(ps);
+	new->mov = op;
+	new->next = NULL;
+	if (ps->ops == NULL)
+		ps->ops = new;
+	else
+		ps->last->next = new;
+	ps->last = new;
 }
 
 void	apply_op(t_ps *ps, t_op_type op)
