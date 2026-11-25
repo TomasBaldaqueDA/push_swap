@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ops_two.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose-fgu <jose-fgu@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 15:39:09 by jose-fgu          #+#    #+#             */
-/*   Updated: 2026/11/25 16:59:56 by jose-fgu         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:10:15 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void sp_op(t_ps *ps, t_op_type op)
+static void	sp_op(t_ps *ps, t_op_type op)
 {
 	if (op == SA)
 		swap(&ps->a);
 	if (op == SB)
 		swap(&ps->b);
-	if(op == SS)
+	if (op == SS)
 	{
 		swap(&ps->a);
 		swap(&ps->b);
@@ -28,14 +28,15 @@ static void sp_op(t_ps *ps, t_op_type op)
 	if (op == PB)
 		push(&ps->b, &ps->a);
 }
-static void rot_op(t_ps *ps, t_op_type op)
+
+static void	rot_op(t_ps *ps, t_op_type op)
 {
 	if (op == RA)
 		rot(&ps->a);
 	if (op == RB)
 		rot(&ps->b);
 	if (op == RR)
-	{	
+	{
 		rot(&ps->a);
 		rot(&ps->b);
 	}
@@ -44,15 +45,16 @@ static void rot_op(t_ps *ps, t_op_type op)
 	if (op == RRB)
 		revrot(&ps->b);
 	if (op == RRR)
-	{	
-		rot(&ps->a);
-		rot(&ps->b);
+	{
+		revrot(&ps->a);
+		revrot(&ps->b);
 	}
 }
-void	do_op(t_ps *ps, t_op_type op)
+
+void	apply_op(t_ps *ps, t_op_type op)
 {
-	if (op == SA || op == SB || op == SS ||op == PA || op == PB)
+	if (op <= PB)
 		sp_op(ps, op);
-	if (op == RA || op == RB || op == RR ||op == RRA || op == RRB || op == RRR)
+	else
 		rot_op(ps, op);
 }

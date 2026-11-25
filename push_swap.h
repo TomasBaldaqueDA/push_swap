@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:47:01 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/24 17:41:00 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:08:18 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,9 @@ int		dupe_check(t_stack *s);
 void	stack_filler(t_ps *ps, int argc, char **argv, int start);
 void	ab_stack(t_ps *ps, int cap);
 int		parse(t_ps *ps, int argc, char **argv);
+void	swap(t_stack *s);
+void	push(t_stack *dst, t_stack *src);
+void	rot(t_stack *s);
+void	revrot(t_stack *s);
 
 #endif

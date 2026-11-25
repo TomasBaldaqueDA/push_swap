@@ -10,7 +10,9 @@ SRCS =  main.c \
 	error.c \
 	atoi_safe.c \
 	parse.c \
-	init.c
+	init.c \
+	ops_one.c \
+	ops_two.c
 
 OBJS = $(SRCS:.c=.o)
 
