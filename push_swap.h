@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:47:01 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/25 17:08:18 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:38:08 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ void	swap(t_stack *s);
 void	push(t_stack *dst, t_stack *src);
 void	rot(t_stack *s);
 void	revrot(t_stack *s);
+void	apply_op(t_ps *ps, t_op_type op);
+void	do_op(t_ps *ps, t_op_type op);
 
 #endif

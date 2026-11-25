@@ -6,7 +6,7 @@
 /*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 15:39:09 by jose-fgu          #+#    #+#             */
-/*   Updated: 2026/11/25 17:33:57 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:38:57 by toafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,10 @@ void	apply_op(t_ps *ps, t_op_type op)
 		sp_op(ps, op);
 	else
 		rot_op(ps, op);
+}
+
+void	do_op(t_ps *ps, t_op_type op)
+{
+	apply_op(ps, op);
+	add_op(ps, op);
 }
