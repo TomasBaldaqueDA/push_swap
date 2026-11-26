@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jose-fgu <jose-fgu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 14:13:02 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/26 14:40:50 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/26 15:06:43 by jose-fgu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ void	print_ops(t_ps *ps)
 		ft_putendl_fd(name_ops[aux->mov], 1);
 		aux = aux->next;
 	}
+}
+
+int	find_imin(t_stack *s)
+{
+	int i;
+	int	min;
+
+	i = 1;
+	min = s->arr[0];
+	while(i < s->len - 1)
+	{
+		if (min > s->arr[i])
+			min = s->arr[i];
+		i++;
+	}
+	return (min);
 }
