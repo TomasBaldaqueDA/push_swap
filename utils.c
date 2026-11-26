@@ -6,7 +6,7 @@
 /*   By: jose-fgu <jose-fgu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 14:13:02 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/26 15:06:43 by jose-fgu         ###   ########.fr       */
+/*   Updated: 2026/11/26 15:12:08 by jose-fgu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ int	find_imin(t_stack *s)
 	int	min;
 
 	i = 1;
-	min = s->arr[0];
-	while(i < s->len - 1)
+	min = 0;
+	while(i < s->len)
 	{
-		if (min > s->arr[i])
-			min = s->arr[i];
+		if (s->arr[min] > s->arr[i])
+			min = i;
 		i++;
 	}
 	return (min);
