@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toafonso <toafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jose-fgu <jose-fgu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 16:55:25 by toafonso          #+#    #+#             */
-/*   Updated: 2026/11/25 15:26:31 by toafonso         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:59:42 by jose-fgu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int	main(int argc, char **argv)
 	ps.strat = ADAPTIVE;
 	if (!parse(&ps, argc, argv))
 		return (0);
+	if (is_sorted(&ps.a) == 0)
+		//order();
+	print_ops(&ps);
 	free_all(&ps);
 	return (0);
 }
